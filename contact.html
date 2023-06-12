@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manga Interactive Exercise</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .exercise-container {
+            text-align: center;
+        }
+
+        .exercise {
+            margin: 20px 0;
+        }
+
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-bottom: 10px;
+        }
+
+        .option {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <div class="exercise">
+            <div class="question">1. Which genre of manga is known for targeting a female audience?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="shonen">
+                    Shonen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="shojo">
+                    Shojo
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="seinen">
+                    Seinen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="josei">
+                    Josei
+                </label>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="question">2.Who is the author of the manga series "One Piece"?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="Eiichiro Oda">
+                    Eiichiro Oda
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="Masashi Kishimoto">
+                    Masashi Kishimoto
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="Hajime Isayama">
+                    Hajime Isayama
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="Kohei Horikoshi">
+                    Kohei Horikoshi
+                </label>
+            </div>
+        </div>
+
+         <div class="exercise">
+        <div class="question">3.What is the name of the protagonist in the manga series "Naruto"?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q3" value="Naruto Uzumaki">
+                Naruto Uzumaki
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="Sasuke Uchiha">
+                Sasuke Uchiha
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="Sakura Haruno">
+                Sakura Haruno
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="Kakashi Hatake">
+                Kakashi Hatake
+            </label>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="question">4.Which manga series is set in a world where humanity is threatened by giant humanoid creatures known as Titans?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q4" value="Naruto">
+                Naruto
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="Attack on Titan">
+                Attack on Titan
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="My Hero Academia">
+                My Hero Academia
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="Bleach">
+                Bleach
+            </label>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <div class="question">5.Who is the author of the manga series "Demon Slayer: Kimetsu no Yaiba"?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q5" value="Koyoharu Gotouge">
+                Koyoharu Gotouge
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="Yoshihiro Togashi">
+                Yoshihiro Togashi
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="Makoto Yukimura">
+                Makoto Yukimura
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="Kentarou Miura">
+                Kentarou Miura
+            </label>
+        </div>
+    </div>
+
+    <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+
+    <script>
+        function checkAnswers() {
+            var q1Answer = document.querySelector('input[name="q1"]:checked');
+            var q2Answer = document.querySelector('input[name="q2"]:checked');
+            var q3Answer = document.querySelector('input[name="q3"]:checked');
+            var q4Answer = document.querySelector('input[name="q4"]:checked');
+            var q5Answer = document.querySelector('input[name="q5"]:checked');
+            var correctAnswers = 0;
+            var incorrectAnswers = [];
+
+            if (q1Answer && q2Answer && q3Answer && q4Answer && q5Answer) {
+                var q1Value = q1Answer.value;
+                var q2Value = q2Answer.value;
+                var q3Value = q3Answer.value;
+                var q4Value = q4Answer.value;
+                var q5Value = q5Answer.value;
+
+                if (q1Value === 'shojo') {
+                    correctAnswers++;
+                } else {
+                    incorrectAnswers.push(1);
+                }
+
+                if (q2Value === 'Eiichiro Oda') {
+                    correctAnswers++;
+                } else {
+                    incorrectAnswers.push(2);
+                }
+
+                if (q3Value === 'Naruto Uzumaki') {
+                    correctAnswers++;
+                } else {
+                    incorrectAnswers.push(3);
+                }
+
+                if (q4Value === 'Attack on Titan') {
+                    correctAnswers++;
+                } else {
+                    incorrectAnswers.push(4);
+                }
+
+                if (q5Value === 'Koyoharu Gotouge') {
+                    correctAnswers++;
+                } else {
+                    incorrectAnswers.push(5);
+                }
+
+                if (correctAnswers === 5) {
+                    alert('Congratulations! You answered all the questions correctly.');
+                } else {
+                    var message = 'Oops! You answered ' + correctAnswers + ' question(s) correctly and ' + incorrectAnswers.length + ' question(s) incorrectly.\n';
+                    message += 'Incorrect answers: ' + incorrectAnswers.join(', ');
+                    alert(message);
+                }
+            } else {
+                alert('Please answer all the questions.');
+            }
+        }
+    </script>
+</body>
+</html>
+
+
